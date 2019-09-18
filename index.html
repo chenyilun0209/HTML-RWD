@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    <!--字形-->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosanstc.css">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Ubuntu:500|Raleway" rel="stylesheet">
+    
+    <!--文字圖形-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <!--加入CSS-->
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="desktop.css">
+    <link rel="stylesheet" href="desktop-m.css">
+    <link rel="stylesheet" href="desktop-s.css">
+    <link rel="stylesheet" href="phone.css">
+    <link rel="stylesheet" href="hamburger.css">
+    
+    <!--Animate.Css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
+    <!--slick css-->
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <!--fancybox css-->
+    <link rel="stylesheet" href="fancybox/jquery.fancybox.css" />
+    <!--套用jQuery-->
+    <script src="jquery-1.12.4.min.js"></script>
+    <!--WOW.js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+         new WOW().init();
+    </script>
+    <!--fancybox js-->
+    <script src="fancybox/jquery.fancybox.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".hamburger").click(function(){
+                $(".hamburger").toggleClass("hamburger-x");
+                $("nav .menu").slideToggle();
+            });
+            
+            var x = $(window).width();
+            if(x < 820)
+                {
+                    $("nav .menu").hide();
+                    $(".hamburger").removeClass("hamburger-x");
+                }
+        });
+        $(window).resize(function() {
+           console.log($(window).width());
+            var w = $(window).width();
+            if(w > 820) {
+                $("nav .menu").show();
+            }
+            else{
+                $("nav .menu").hide();
+                $(".hamburger").removeClass("hamburger-x");
+            }
+        });
+    </script>
+    <!--slick js-->
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+                $('#blog .wrapper:nth-of-type(2)').slick({
+                    slidesToShow: 4,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 4000,
+                    responsive:[
+                        {
+                            breakpoint:1200,
+                            settings:{
+                                slidesToShow:3
+                            }
+                        },
+                        {
+                            breakpoint:820,
+                            settings:{
+                                slidesToShow:2
+                            }
+                        },
+                        {
+                            breakpoint:600,
+                            settings:{
+                                slidesToShow:1
+                            }
+                        }
+                    ]
+                });
+        $('#slider .wrapper').slick({
+            dots: true,
+            infinite: true,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            arrows:false,
+            fade: true,
+            cssEase: 'linear'
+        });
+      
+    });
+  </script>
+   
+    <style>
+        #gotop {
+            position: fixed;
+            right: 30px;
+            bottom: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #363636;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            font-size: 1.5em;
+            line-height: 60px;
+        }
+    </style>
+    <script>
+        $(function(){
+            var speed = 1500;
+            $("nav a").click(function(){              
+                var _target = $(this).data("target"); //取得target
+                var _offset = $("#"+_target).offset().top; //串聯字串
+               
+                console.log(_offset);
+                $("html,body").animate({scrollTop:_offset}, speed);
+                
+                return false;
+            });
+            
+            $("#gotop").click(function(){
+               $("html,body").animate({
+                   scrollTop:0
+               }, speed); 
+                return false;
+            });
+            
+            $("#gotop").hide();
+            $(window).scroll(function(){
+               var q = $(window).scrollTop();
+                if( q > 800){
+                    $("#gotop").fadeIn();
+                }
+                else {
+                    $("#gotop").fadeOut();
+                }
+            });
+        });
+    </script>
+    
+</head>
+
+<body>
+    <nav class="container">
+        <div class="wrapper clearfix">
+           <div class="hamburger"><span></span></div>
+            <div class="logo">TIMEOUT</div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#" data-target="works">WORKS</a></li>
+                    <li><a href="#" data-target="services">SERVICES</a></li>
+                    <li><a href="#" data-target="aboutUs">ABOUT US</a></li>
+                    <li><a href="#" data-target="blog">BLOG</a></li>
+                    <li><a href="#" data-target="contact">CONTACT</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="container">
+        <div class="wrapper">
+            <div class="wrapper-s animated zoomIn">
+                <h1>AMAZING STUDIO</h1>
+                <p class="animated zoomIn">Flexible and Creative. Meet the New Style</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="container" id="works">
+        <div class="wrapper-s">
+            <h2>We Provide Awesome Digital Soultions<br> With a Great Attention to Details
+            <i class="fa fa-clock-o fa-2x animated tada infinite" style="color: #575757;"></i></h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit cupiditate, consequatur, ab, atque sed fugiat voluptatum laboriosam impedit possimus quia, mollitia necessitatibus neque praesentium. Maiores doloribus minus, placeat laborum asperiores!</p>
+        </div>
+    </div>
+
+    <div class="container" id="banner"></div>
+
+    <div class="container" id="services">
+        <div class="wrapper">
+            <h2 class="wow zoomIn" data-wow-delay="0s">BEST SERVICES</h2>
+            <p class="wow zoomIn" data-wow-delay="0.2s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, neque.</p>
+        </div>
+        <div class="wrapper clearfix">
+            <div class="col-3 wow rotateInDownLeft" data-wow-delay="0s">
+                <img src="icon/service-1.png" alt="">
+                <h3>Lorem ipsum</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel molestias unde eveniet sit?</p>
+            </div>
+            <div class="col-3 wow rotateInDownLeft" data-wow-delay="0.3s">
+                <img src="icon/service-2.png" alt="">
+                <h3>Lorem ipsum</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel molestias unde eveniet sit?</p>
+            </div>
+            <div class="col-3 wow rotateInDownLeft" data-wow-delay="0.6s">
+                <img src="icon/service-3.png" alt="">
+                <h3>Lorem ipsum</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel molestias unde eveniet sit?</p>
+            </div>
+            <div class="col-3 wow rotateInDownLeft" data-wow-delay="0.9s">
+                <img src="icon/service-4.png" alt="">
+                <h3>Lorem ipsum</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel molestias unde eveniet sit?</p>
+            </div>
+            <div class="col-3 wow rotateInDownLeft" data-wow-delay="1.2s">
+                <img src="icon/service-5.png" alt="">
+                <h3>Lorem ipsum</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel molestias unde eveniet sit?</p>
+            </div>
+            <div class="col-3 wow rotateInDownLeft" data-wow-delay="1.5s">
+                <img src="icon/service-6.png" alt="">
+                <h3>Lorem ipsum</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel molestias unde eveniet sit?</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container" id="slider">
+        <div class="wrapper">
+            <a href="img/024.jpg" data-fancybox="pic"><div>
+                <img src="img/024.jpg" alt="pure css3 slider" />
+            </div></a>
+            <a href="img/025.jpg" data-fancybox="pic"><div>
+                <img src="img/025.jpg" alt="pure css3 slider" />
+            </div></a>
+            <a href="img/026.jpg" data-fancybox="pic"><div>
+                <img src="img/026.jpg" alt="pure css3 slider" />
+            </div></a>
+            <a href="img/028.jpg" data-fancybox="pic"><div>
+                <img src="img/028.jpg" alt="pure css3 slider" />
+            </div></a>
+        </div>
+    </div>
+     
+    <div class="container" id="aboutUs">
+        <div class="wrapper">
+            <h2 class="wow zoomIn">ABOUT US</h2>
+            <p class="wow zoomIn">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, neque.</p>
+        </div>
+        <div class="wrapper clearfix">
+            <div class="col-3 wow fadeInDown">
+              <div class="card">
+                  <div class="font">
+                   <div class="icon"><img src="icon/about-1.png" alt=""></div>
+                </div>
+                <div class="back">
+                 <img src="icon/about-5.png" alt="">
+                  </div>
+              </div>
+                <h3>Lorem ipsum</h3>
+                <p>Lorem ipsum dolor sit amet</p> 
+            </div>
+            <div class="col-3 wow fadeInDown">
+                <div class="card">
+                  <div class="font">
+                   <div class="icon"><img src="icon/about-2.png" alt=""></div>
+                </div>
+                <div class="back">
+                   <img src="icon/about-4.png" alt="">
+                    </div>
+              </div>
+                <div><h3>Lorem ipsum</h3>
+                <p>Lorem ipsum dolor sit amet</p> 
+                </div>
+            </div>
+            
+            <div class="col-3 wow fadeInDown">
+                <div class="card">
+                  <div class="font">
+                   <div class="icon"><img src="icon/about-3.png" alt=""></div>
+                </div>
+                <div class="back">
+                   <img src="icon/about-6.png" alt="">
+                    </div>
+              </div>
+                <h3>Lorem ipsum</h3>
+                <p>Lorem ipsum dolor sit amet</p> 
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="container" id="joinUs">
+        <div class="wrapper-s">          
+               <div><h2>Are you ready to enjoy? Grab this Pefert Theme now!</h2></div>
+                <a href="#">PUCHASE NOW</a>           
+        </div>
+    </div>
+
+    <div class="container" id="blog">
+        <div class="wrapper">
+            <h2 class="wow zoomIn">LATAEST NEWS</h2>
+            <p class="wow zoomIn">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, neque.</p>
+        </div>
+        <div class="wrapper clearfix">
+            <div class="col-4 wow fadeInUp" data-wow-delay="0s">
+                <div class="photo">
+                    <img src="img/022.jpg" alt="">
+                    <div class="date">
+                        <p>14</p>
+                        <p>MAR</p>
+                    </div>
+                </div>
+                <h3>Lorem ipsum dolor sit amet.</h3>
+                <p>Lorem ipsum dolor sit amet dolore dolorum vel quisquam veritatis!</p>
+                <p><a href="#">READ MORE ></a></p>
+            </div>
+            <div class="col-4 wow fadeInUp" data-wow-delay="0.4s">
+                <div class="photo">
+                    <img src="img/022.jpg" alt="">
+                    <div class="date">
+                        <p>14</p>
+                        <p>MAR</p>
+                    </div>
+                </div>
+                <h3>Lorem ipsum dolor sit amet.</h3>
+                <p>Lorem ipsum dolor sit amet dolore dolorum vel quisquam veritatis!</p>
+                <p><a href="#">READ MORE ></a></p>
+            </div>
+            <div class="col-4 wow fadeInUp" data-wow-delay="0.8s">
+                <div class="photo">
+                    <img src="img/022.jpg" alt="">
+                    <div class="date">
+                        <p>14</p>
+                        <p>MAR</p>
+                    </div>
+                </div>
+                <h3>Lorem ipsum dolor sit amet.</h3>
+                <p>Lorem ipsum dolor sit amet dolore dolorum vel quisquam veritatis!</p>
+                <p><a href="#">READ MORE ></a></p>
+            </div>
+            <div class="col-4 wow fadeInUp" data-wow-delay="1.2s">
+                <div class="photo">
+                    <img src="img/022.jpg" alt="">
+                    <div class="date">
+                        <p>14</p>
+                        <p>MAR</p>
+                    </div>
+                </div>
+                <h3>Lorem ipsum dolor sit amet.</h3>
+                <p>Lorem ipsum dolor sit amet dolore dolorum vel quisquam veritatis!</p>
+                <p><a href="#">READ MORE ></a></p>
+            </div>
+            <div class="col-4 wow fadeInUp" data-wow-delay="1.4s">
+                <div class="photo">
+                    <img src="img/022.jpg" alt="">
+                    <div class="date">
+                        <p>14</p>
+                        <p>MAR</p>
+                    </div>
+                </div>
+                <h3>Lorem ipsum dolor sit amet.</h3>
+                <p>Lorem ipsum dolor sit amet dolore dolorum vel quisquam veritatis!</p>
+                <p><a href="#">READ MORE ></a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="sponsor">
+        <div class="wrapper">
+            <div class="sponsorBox animated rubberBand infinite"><img src="icon/sponsor-1.png" alt=""></div>
+            <div class="sponsorBox animated rubberBand infinite"><img src="icon/sponsor-2.png" alt=""></div>
+            <div class="sponsorBox animated rubberBand infinite"><img src="icon/sponsor-3.png" alt=""></div>
+            <div class="sponsorBox animated rubberBand infinite"><img src="icon/sponsor-4.png" alt=""></div>
+            <div class="sponsorBox animated rubberBand infinite"><img src="icon/sponsor-5.png" alt=""></div>
+            <div class="sponsorBox animated rubberBand infinite"><img src="icon/sponsor-6.png" alt=""></div>
+        </div>
+    </div>
+
+    <div class="container" id="contact">
+        <div class="wrapper">
+            <h2 class="wow zoomIn">CONTACT</h2>
+            <p class="wow zoomIn">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, neque.</p>
+        </div>
+        <div class="wrapper clearfix">
+            <div class="contactLeft wow fadeInLeft" data-wow-delay="0.4s">
+                <table>
+                    <tr>
+                        <td colspan="2">
+                            <h3>INFORMATION</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="fa fa-home"></span></td>
+                        <td>
+                            <p>California CA<br> Afela inc.<br> 48792<br> Star Apple st. 54</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="fa fa-phone"></span></td>
+                        <td>
+                            <p>(+886)980 222 333</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="fa fa-envelope-o"></span></td>
+                        <td>
+                            <p>afelacom@gmail.com</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="contactRight wow fadeInLeft" data-wow-delay="0s">
+                <table>
+                    <tr>
+                        <td><input type="text" placeholder="Name"></td>
+                        <td><input type="email" placeholder="E-mail"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <textarea placeholder="Message"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <button type="button">SEND MESSAGE</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <footer class="container">
+        <div class="wrapper-s">
+            <div class="logo animated pulse infinite">TIMEOUT</div>
+        </div>
+        <div class="wrapper-s">
+            <div class="footerBox"><img src="icon/footer-1.png" alt=""></div>
+            <div class="footerBox"><img src="icon/footer-2.png" alt=""></div>
+            <div class="footerBox"><img src="icon/footer-3.png" alt=""></div>
+            <div class="footerBox"><img src="icon/footer-4.png" alt=""></div>
+            <div class="footerBox"><img src="icon/footer-5.png" alt=""></div>
+        </div>
+        <div class="wrapper-s">
+            <p><span class="fa fa-copyright"></span>2017 Afela | Designed by Lun</p>
+        </div>
+    </footer>
+    <div class="gotop">
+        <a href="#" id="gotop">TOP</a>
+    </div>
+</body>
+</html>
