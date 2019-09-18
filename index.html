@@ -44,7 +44,7 @@
             });
             
             var x = $(window).width();
-            if(x < 820)
+            if(x < 600)
                 {
                     $("nav .menu").hide();
                     $(".hamburger").removeClass("hamburger-x");
@@ -53,7 +53,7 @@
         $(window).resize(function() {
            console.log($(window).width());
             var w = $(window).width();
-            if(w > 820) {
+            if(w > 600) {
                 $("nav .menu").show();
             }
             else{
