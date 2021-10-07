@@ -1,0 +1,413 @@
+@media screen and (max-width:480px) {
+/*****************************************************/
+    /*1.更改區塊Default: width、margin、float*/
+    /*2.更改NAV: float、border-bottom*/
+    /*3.更改HEADER: height、font-size*/
+    /*4.更改SERVICES: text-align*/
+    /*5.更改JOIN US: font-size、
+                    a{ display: block;
+                       width: 90%;
+                       margin: auto; }*/
+    /*6.更改BLOG: text-align*/
+/*****************************************************/
+/* 區塊Default */        
+        .container {
+            width: 100%;/* 滿版 */ 
+        }
+        
+        .wrapper {
+            width: 100%;
+/*            margin: auto;*/
+        }
+        
+        .wrapper-s {
+            width: 90%;
+            margin: auto;
+        }
+        
+        .col-3 {
+            width: 100%;
+            /* Calc計算，三等份 */
+            padding: 15px;
+/*            float: left;*/
+        }
+        
+        .col-4 {
+            width: 100%;
+            padding: 15px;
+/*            float: left;*/
+        }
+/*****************************************************/
+/* NAV */     
+        nav {
+            background-color: black;
+        }
+        
+        nav li {
+            list-style: none;
+/*            float: left;*/
+        }
+        
+        nav .menu {
+/*            float: right;*/
+            line-height: 70px;
+        }
+        
+        nav .logo {
+/*            float: left;*/
+            color: #FFF;
+            font-family: "Permanent Marker";
+            font-size: 30px;
+            line-height: 70px;
+            text-align: center;
+        }
+        
+        nav .menu a {
+            display: block;
+            color: #fff;
+            font-size: 16px;
+            text-decoration: none;
+            padding-left: 15px;
+            padding-right: 15px;
+            transition: background-color .5s,color .5s; /*轉場效果,變化的屬性,時間,延遲時間*/
+            border-bottom: 1px solid #FFF;
+        }
+        
+        nav .menu a:hover {
+            background-color: #848484;
+        }
+        nav .menu a:focus {
+            background-color: #848484;
+        }
+/*****************************************************/
+/* HEADER */      
+        header {
+            background-image: url(img/010.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            height: 500px;
+            display: table;
+        }
+        
+        /*使用假表格做垂直置中*/
+        header .wrapper {
+            display: table-cell;
+            /*不能設定寬度*/
+            vertical-align: middle;
+            color: #FFF;
+        }
+        
+        header h1 {
+            font-size: 40px;
+            letter-spacing: 5px;
+        }
+/*****************************************************/
+/*WORKS*/
+        #works {
+            padding-top: 150px;
+            padding-bottom: 150px;
+            text-align: center;
+        }
+        
+        #works h2 {
+            font-size: 30px;
+        }
+        
+        #works p {
+            margin-top: 15px;
+        }
+/*****************************************************/
+/*banner*/
+        #banner {
+            background-image: url(img/011.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 300px; 
+            text-align: center;
+            display: table;
+        }
+/*****************************************************/
+/*SERVICES*/
+        #services {
+            padding-top: 150px;
+            padding-bottom: 150px;
+            text-align: center;
+        }
+        
+        /*第一個wrapper(標題)置中*/
+        #services .wrapper:nth-of-type(1) {
+            text-align: center;
+        }
+        
+        #services .wrapper:nth-of-type(1) p {
+            margin-top: 15px;
+            margin-bottom: 50px;
+        }
+        
+        #services h2 {
+            font-size: 30px;
+        }
+        
+        #services h3 {
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        
+        #services img {
+            width: 80px;
+        }
+/*****************************************************/
+/*slider*/
+      
+/*****************************************************/
+/*slider2*/
+      
+/*****************************************************/
+/*ABOUT US*/
+        #aboutUs {
+            padding-top: 150px;
+            padding-bottom: 150px;
+            text-align: center;
+        }
+        
+        #aboutUs .wrapper:nth-of-type(1) p {
+            margin-top: 15px;
+            margin-bottom: 50px;
+        }
+        
+        #aboutUs h2 {
+            font-size: 30px;
+        }
+        
+        #aboutUs h3 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        #aboutUs .icon {
+            border: 4px double #d1d1d1;
+            padding: 10px;
+        }
+        
+        #aboutUs img {
+            width: 200px;
+        }
+/*****************************************************/
+/*JOIN US*/
+        #joinUs {
+            background-image: url(img/012.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            display: table;
+            padding-bottom: 100px;
+            padding-top: 100px;
+        }
+        
+        /*使用假表格做垂直置中*/
+        #joinUs .wrapper-s {
+            display: table-cell;
+            /*不能設定寬度*/
+            vertical-align: middle;
+            color: #FFF;
+        }
+        #joinUs h2 {
+            font-size: 28px;
+        }
+        #joinUs .wrapper-s div {
+            margin-bottom: 40px;
+        }
+        #joinUs .wrapper-s a {
+            display: block;
+            width: 90%;
+            margin: auto;
+            text-decoration: none;
+            color: #505050;
+            background-color: #fff;
+            border: 2px solid #505050;
+            padding: 10px;
+            font-weight: 700;
+        }     
+        #joinUs .wrapper-s a:hover {
+            color: #fff;
+            background-color: #505050;
+        }
+/*****************************************************/
+/*BLOG*/       
+        #blog {
+            padding-top: 150px;
+            padding-bottom: 150px;
+            text-align: center;
+        }
+        
+        #blog .photo {
+            position: relative;
+            /*設定相對定位*/
+        }
+        
+        #blog img {
+            max-width: 100%;
+        }
+        
+        #blog .photo .date {
+            width: 50px;
+            position: absolute;
+            /*設定絕對定位，在photo左上角*/
+            top: 0px;
+            left: 0px;
+            background-color: #b1b1b1;
+        }
+        
+        #blog .photo .date p {
+            color: #ffffff;
+            text-align: center;
+        }
+        
+        /*第一個wrapper(標題)置中*/
+        #blog .wrapper:nth-of-type(1) {
+            text-align: center;
+        }
+        
+        #blog .wrapper:nth-of-type(1) p {
+            margin-top: 15px;
+            margin-bottom: 50px;
+        }
+        
+        #blog h2 {
+            font-size: 30px;
+        }
+        
+        #blog h3 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        #blog a {
+            text-decoration: none;
+            color: black;
+        }
+/*****************************************************/
+/*sponsor*/        
+        #sponsor {
+            padding-top: 100px;
+            padding-bottom: 100px;
+            background-color: black;
+        }
+        #sponsor .wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        #sponsor .sponsorBox {       
+            width: 60px;
+        }
+/*****************************************************/
+/*CONTACT*/       
+        #contact {
+            padding-top: 150px;
+            padding-bottom: 150px;
+        }
+        
+        /*第一個wrapper(標題)置中*/
+        #contact .wrapper:nth-of-type(1) {
+            text-align: center;
+        }
+        
+        #contact .wrapper:nth-of-type(1) p {
+            margin-top: 15px;
+            margin-bottom: 50px;
+        }
+        
+        /*INFORMATION*/
+        #contact .contactLeft {
+/*            float: left;*/
+        }
+        
+        #contact .contactLeft table {
+            width: 20%;
+            margin: auto;
+        }
+        
+        #contact .contactLeft tr {
+            display: block;
+            margin: 20px;
+        }
+        
+        #contact .contactLeft td {
+            vertical-align: text-top;
+        }
+        #contact .contactLeft td:nth-of-type(1) {
+            letter-spacing: 3px;
+        }
+        #contact .contactLeft tr:nth-of-type(1) {
+            margin-bottom: 30px;
+        }
+        
+        /*文字圖形*/
+        #contact .contactLeft span {
+            margin-right: 10px;
+        }
+        
+        /*表單*/
+        #contact .contactRight {
+/*            float: left;*/
+        }
+        #contact .contactRight table{
+            width: 80%;
+            margin: auto;
+        }
+        #contact .contactRight tr td{
+            display: block;
+            padding:15px; 
+        }
+        
+        /*Name、E-mail*/
+        #contact .contactRight tr:nth-of-type(1) input {
+            width: 100%;
+            height: 35px;
+        }
+        
+        /*Message*/
+        #contact .contactRight textarea {
+            width: 100%;
+            height: 250px;
+        }
+        
+        /*btn*/
+        #contact .contactRight tr:nth-of-type(3) td {       
+            text-align: right;
+        }
+        
+        #contact .contactRight button {
+            width: 100%;
+            height: 50px;
+            background-color: #6ad3d3;
+            color: white;
+            border: 0;
+            cursor: pointer;
+        }
+/*****************************************************/
+/*Footer*/       
+        footer {
+            padding-top: 100px;
+            padding-bottom: 100px;
+            background-color: black;
+            text-align: center;
+        }
+        
+        footer .logo {
+            color: #FFF;
+            font-family: "Permanent Marker";
+            font-size: 40px;
+        }
+        
+        footer .footerBox {
+            display: inline-block;
+            width: 30px;
+            margin: 20px;
+        }
+}

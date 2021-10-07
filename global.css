@@ -1,0 +1,28 @@
+        /*CSS Defult*/
+        * {
+            font-family: "Raleway", "Noto Sans Tc";
+            box-sizing: border-box;
+            /*background-color: #c4c4c4;*/
+        }
+        
+        h1,h2,h3,h4,h5,h6,p,ul,ol,il {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        
+        img {
+            /* max-width: 100%; */
+            max-width: 100%;
+            vertical-align: top;
+        }
+        
+        p {
+            color: #b1b1b1;
+            line-height: 2;
+        }
